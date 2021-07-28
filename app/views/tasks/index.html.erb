@@ -1,6 +1,9 @@
 <h1>My tasks</h1>
 <ul>
   <% @tasks.each do |t| %>
-    <li><%= link_to t.title, task_path(t) %></li>
+    <li>
+      <%= link_to t.title, task_path(t) %> - 
+      <%= link_to "Delete this task", task_path(t), method: :delete, data: {confirm:"estas seguro que quieres borrar?"}  %>
+    </li>
   <% end %>
 </ul>
